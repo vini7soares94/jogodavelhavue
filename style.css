@@ -1,0 +1,83 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#app {
+  text-align: center;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  display: inline-block; /* Alteração feita aqui */
+  float: left; /* Adição feita aqui */
+  box-sizing: border-box; /* Adição feita aqui */
+  font-size: 2em;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  transition: background-color 0.3s ease;
+  line-height: 100px; /* Adição feita aqui */
+  text-align: center; /* Adição feita aqui */
+}
+
+.square:hover {
+  background-color: #f9f9f9;
+}
+
+.square.disabled {
+  cursor: not-allowed;
+}
+
+.x-mark {
+  color: #ff5a5a; /* Vermelho */
+}
+
+.o-mark {
+  color: #5a8dff; /* Azul */
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.message {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.win-message {
+  color: #ff5a5a; /* Vermelho */
+}
+
+.lose-message {
+  color: #5a8dff; /* Azul */
+}
