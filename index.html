@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div v-for="(row, rowIndex) in board" class="row">
+      <div v-for="(cell, colIndex) in row" 
+           :key="colIndex"
+           class="square"
+           @click="placeMark(rowIndex, colIndex)"
+           :class="{ 'x-mark': cell === 'X', 'o-mark': cell === 'O' }"
+           v-text="cell">
+      </div>
+    </div>
+    <div v-if="gameOver" class="message" :class="{ 'win-message': winner === 'X', 'lose-message': winner === 'O' }">
+      {{ winner === 'X' ? 'Jogador X ganhou!' : (winner === 'O' ? 'Jogador O ganhou!' : 'Empate!') }}
+    </div>
+    <button @click="reset">Novo Jogo</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
