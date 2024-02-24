@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jogo da Velha</title>
-  <h1>JOGO DA VELHA</h1>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="app">
+    <h1>JOGO DA VELHA</h1>
     <div v-for="(row, rowIndex) in board" class="row">
       <div v-for="(cell, colIndex) in row" 
            :key="colIndex"
